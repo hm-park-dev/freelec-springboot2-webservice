@@ -13,12 +13,12 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@RunWith(SpringRunner.class) //
-@WebMvcTest(controllers = HelloController.class)
+@RunWith(SpringRunner.class) // 테스트를 진행할 때 JUnit 내장 실행자가 아닌 SpringRunner로 실행
+@WebMvcTest(controllers = HelloController.class) // Web(Spring MVC)에 집중할 수 있는 어노테이션, 몇몇 어노테이션을 사용할 수 없음
 public class HelloControllerTest {
 
-    @Autowired
-    private MockMvc mvc;
+    @Autowired // 스프링이 관리하는 Bean을 주입받음
+    private MockMvc mvc; // 스프링 MVC 테스트
 
     @Test
     public void hello가_리턴된다() throws Exception {
